@@ -393,49 +393,7 @@ const petalObserver=new IntersectionObserver(entries=>{
 
 petalObserver.observe(letter);
 
-// ===============================
-// Typewriter Effect
-// ===============================
 
-document.querySelectorAll(".caption h2").forEach(text=>{
-
-    const original=text.innerText;
-
-    text.innerText="";
-
-    const typeObserver=new IntersectionObserver(entries=>{
-
-        entries.forEach(entry=>{
-
-            if(entry.isIntersecting){
-
-                let i=0;
-
-                const typing=setInterval(()=>{
-
-                    text.innerText+=original.charAt(i);
-
-                    i++;
-
-                    if(i>=original.length){
-
-                        clearInterval(typing);
-
-                    }
-
-                },35);
-
-                typeObserver.disconnect();
-
-            }
-
-        });
-
-    });
-
-    typeObserver.observe(text);
-
-});
 
 // ===============================
 // Resize
